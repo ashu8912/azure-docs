@@ -5,11 +5,10 @@ description: Learn how to use point-in-time restore to restore a set of block bl
 services: storage
 author: normesta
 
-ms.service: storage
+ms.service: azure-blob-storage
 ms.topic: how-to
 ms.date: 01/29/2021
 ms.author: normesta
-ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
 ---
 
@@ -18,6 +17,9 @@ ms.custom: devx-track-azurepowershell
 You can use point-in-time restore to restore one or more sets of block blobs to a previous state. This article describes how to enable point-in-time restore for a storage account and how to perform a restore operation.
 
 To learn more about point-in-time restore, see [Point-in-time restore for block blobs](point-in-time-restore-overview.md).
+
+> [!NOTE]
+> Point-in-time restore is supported for general-purpose v2 storage accounts in the standard performance tier only. Only data in the hot and cool access tiers can be restored with point-in-time restore.
 
 > [!CAUTION]
 > Point-in-time restore supports restoring operations on block blobs only. Operations on containers cannot be restored. If you delete a container from the storage account by calling the [Delete Container](/rest/api/storageservices/delete-container) operation, that container cannot be restored with a restore operation. Rather than deleting an entire container, delete individual blobs if you may want to restore them later. Also, Microsoft recommends enabling soft delete for containers and blobs to protect against accidental deletion. For more information, see [Soft delete for containers](soft-delete-container-overview.md) and [Soft delete for blobs](soft-delete-blob-overview.md).
@@ -38,7 +40,7 @@ Before you enable and configure point-in-time restore, enable its prerequisites 
 To configure point-in-time restore with the Azure portal, follow these steps:
 
 1. Navigate to your storage account in the Azure portal.
-1. Under **Settings**, choose **Data Protection**.
+1. Under **Data management**, choose **Data Protection**.
 1. Select **Turn on point-in-time** restore. When you select this option, soft delete for blobs, versioning, and change feed are also enabled.
 1. Set the maximum restore point for point-in-time restore, in days. This number must be at least one day less than the retention period specified for blob soft delete.
 1. Save your changes.

@@ -1,17 +1,17 @@
 ---
-title: Monitoring Azure Static Web Apps
+title: Monitor Azure Static Web Apps
 description: Monitor requests, failures, and tracing information in Azure Static Web Apps
 services: static-web-apps
 author: craigshoemaker
-ms.service: static-web-apps
+ms.service: azure-static-web-apps
 ms.topic:  conceptual
-ms.date: 4/23/2021
+ms.date: 09/19/2022
 ms.author: cshoe
 ---
 
 # Monitor Azure Static Web Apps
 
-Enable [Application Insights](../azure-monitor/app/app-insights-overview.md) to monitor API  requests, failures, and tracing information.
+Enable [Application Insights](/azure/azure-monitor/app/app-insights-overview) to monitor API  requests, failures, and tracing information.
 
 > [!IMPORTANT]
 > Application Insights has an [independent pricing model](https://azure.microsoft.com/pricing/details/monitor) from Azure Static Web Apps.
@@ -33,8 +33,10 @@ Use the following steps to add Application Insights monitoring to your static we
 
 :::image type="content" source="media/monitoring/azure-static-web-apps-application-insights-add.png" alt-text="Add Application Insights to Azure Static Web Apps":::
 
+Once you create the Application Insights instance, it creates an associated application setting in the Azure Static Web Apps instance used to link the services together.
+
 > [!NOTE]
-> Once you create the Application Insights instance, an associated application setting is created in the Azure Static Web Apps instance used to link the services together.
+> If you want to track how the different features of your web app are used end-to-end client side, you can insert trace calls in your JavaScript code. For more information, see [Application Insights for webpages](/azure/azure-monitor/app/javascript?tabs=snippet).
 
 ## Access data
 
@@ -42,17 +44,17 @@ Use the following steps to add Application Insights monitoring to your static we
 
 1. From the list, select the Application Insights instance prefixed with the same name as your static web app.
 
-The following highlights a few locations in the portal used to inspect aspects of your application's API endpoints.
+The following table highlights a few locations in the portal you can use to inspect aspects of your application's API endpoints.
 
 > [!NOTE]
-> For more detail on Application Insights usage, refer to [Application Insights overview](../azure-monitor/app/app-insights-overview.md).
+> For more information on Application Insights usage, see the [App insights overview](/azure/azure-monitor/app/app-insights-overview).
 
 | Type | Menu location | Description |
 |--- | --- | --- |
-| [Failures](../azure-monitor/app/asp-net-exceptions.md) | _Investigate > Failures_ | Review failed requests. |
-| [Server requests](../azure-monitor/app/tutorial-performance.md) | _Investigate > Performance_ | Review individual API requests.  |
-| [Logs](../azure-monitor/app/diagnostic-search.md) | _Monitoring > Logs_ | Interact with an editor to query transaction logs. |
-| [Metrics](../azure-monitor/essentials/app-insights-metrics.md) | _Monitoring > Metrics_ | Interact with a designer to create custom charts using various metrics. |
+| [Failures](/azure/azure-monitor/app/asp-net-exceptions) | _Investigate > Failures_ | Review failed requests. |
+| [Server requests](/azure/azure-monitor/app/tutorial-performance) | _Investigate > Performance_ | Review individual API requests.  |
+| [Logs](/azure/azure-monitor/app/search-and-transaction-diagnostics?tabs=transaction-search) | _Monitoring > Logs_ | Interact with an editor to query transaction logs. |
+| [Metrics](/azure/azure-monitor/essentials/app-insights-metrics) | _Monitoring > Metrics_ | Interact with a designer to create custom charts using various metrics. |
 
 ### Traces
 
@@ -62,17 +64,17 @@ Using the following steps to view traces in your application.
 
 1. Hover your mouse over any card in the _Queries_ window.
 
-1. Select the **Load Editor** button.
+2. Select **Load Editor**.
 
-1. Replace the generated query with the word `traces`.
+3. Replace the generated query with the word `traces`.
 
-1. Select the **Run** button.
+4. Select **Run**.
 
 :::image type="content" source="media/monitoring/azure-static-web-apps-application-insights-traces.png" alt-text="View Application Insights traces":::
 
 ## Limit logging
 
-In some cases you may want to limit logging while still capturing details on errors and warnings by making the following changes to your _host.json_ file of the Azure Functions app.
+In some cases, you may want to limit logging while still capturing details on errors and warnings. You can do so by making the following changes to your _host.json_ file of the Azure Functions app.
 
 ```json
 {
@@ -94,4 +96,4 @@ In some cases you may want to limit logging while still capturing details on err
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Setup authentication and authorization](authentication-authorization.md)
+> [Set up authentication and authorization](authentication-authorization.yml)

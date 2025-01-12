@@ -1,14 +1,13 @@
 ---
 title: Azure Synapse Link for Azure Cosmos DB supported features
 description: Understand the current list of actions supported by Azure Synapse Link for Azure Cosmos DB
-services: synapse-analytics 
 author: Rodrigossz
-ms.service: synapse-analytics 
+ms.service: azure-synapse-analytics
 ms.topic: conceptual
 ms.subservice: synapse-link
 ms.date: 06/02/2021
 ms.author: rosouz
-ms.reviewer: sngun
+ms.reviewer: whhender
 ms.custom: cosmos-db
 ---
 
@@ -20,7 +19,7 @@ This article describes the functionalities that are currently supported in Azure
 
 There are two types of containers in Azure Cosmos DB:
 * HTAP container - A container with Synapse Link enabled. This container has both transactional store and analytical store. 
-* OLTP container - A container with Synaspe Link not enabled. This container has only transactional store and no analytical store.
+* OLTP container - A container with Synapse Link not enabled. This container has only transactional store and no analytical store.
 
 You can connect to an Azure Cosmos DB container without enabling Synapse Link. In this scenario, you can only read/write to the transactional store. What follows is a list of the currently supported features within Synapse Link for Azure Cosmos DB. 
 
@@ -51,10 +50,10 @@ You can connect to an Azure Cosmos DB container without enabling Synapse Link. I
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- |----------------------------------------------------------- |
 | **Explore data** |Explore data from a container with familiar T-SQL syntax and automatic schema inference|X| ✓ |
 | **Create views and build BI reports** |Create a SQL view to have direct access to a container for BI through serverless SQL pool |X| ✓ |
-| **Join disparate data sources along with Cosmos DB data** | Store results of query reading data from Cosmos DB containers along with data in Azure Blob Storage or Azure Data Lake Storage using CETAS |X| ✓ |
+| **Join disparate data sources along with Azure Cosmos DB data** | Store results of query reading data from Azure Cosmos DB containers along with data in Azure Blob Storage or Azure Data Lake Storage using CETAS |X| ✓ |
 
 ## Next steps
 
 * See how to [connect to Synapse Link for Azure Cosmos DB](../quickstart-connect-synapse-link-cosmos-db.md)
-* [Learn how to query the Cosmos DB Analytical Store with Spark 3](how-to-query-analytical-store-spark-3.md)
-* [Learn how to query the Cosmos DB Analytical Store with Spark 2](how-to-query-analytical-store-spark.md)
+* [Learn how to query the Azure Cosmos DB Analytical Store with Spark 3](how-to-query-analytical-store-spark-3.md)
+* [Learn how to query the Azure Cosmos DB Analytical Store with Spark 2](how-to-query-analytical-store-spark.md)

@@ -1,26 +1,35 @@
 ---
-title: Offerings from partners - Azure partner solutions
-description: Learn about solutions offered by partners on Azure.
-author: flang-msft
-
+title: Overview of Azure Native ISV Services
+description: Learn about the Azure Native ISV Services' features and benefits, including unified operations and integrations.
 ms.topic: conceptual
-ms.custom: event-tier1-build-2022
-ms.date: 08/24/2022
-ms.author: franlanglois
+ms.date: 01/06/2025
 
 ---
 
-# Extend Azure with solutions from partners
+# Azure Native ISV Services overview
 
-Partner organizations offer solutions that you can use in Azure to enhance your cloud infrastructure. These solutions are fully integrated into Azure. You work with these solutions in much the same way you would work with solutions from Microsoft. You use a resource provider, resource types, and SDKs to manage the solution.
+Easily provision, manage, and tightly integrate *independent software vendor (ISV)* software and services on Azure with Azure Native ISV Services. Microsoft and the ISV work together to develop and manage the service. 
 
-Partner solutions are available through the Marketplace.
+Currently, services are publicly available in these areas: 
 
-| Partner solution | Description |
-| :--- | :--- |
-| [Apache Kafka for Confluent Cloud](./apache-kafka-confluent-cloud/overview.md) | Fully managed event streaming platform powered by Apache Kafka |
-| [Datadog](./datadog/overview.md) | Monitor your servers, clouds, metrics, and apps in one place. |
-| [Elastic](./elastic/overview.md) | Monitor the health and performance of your Azure environment. |
-| [Logz.io](./logzio/overview.md)  | Monitor the health and performance of your Azure environment. |
-| [Dynatrace for Azure](./dynatrace/dynatrace-overview.md)  | Use Dynatrace for Azure for monitoring your workloads using the Azure portal. |
-| [NGINX for Azure (preview)](./nginx/nginx-overview.md)  | Use NGINX for Azure (preview) as a reverse proxy within your Azure environment. |
+- Observability
+- Data and storage
+- Networking and security
+
+For a list of available partner services, see [Extend Azure with Azure Native ISV Services](partners.md).
+
+## Features
+
+Each Azure Native ISV Service offers unified operations and integrations. 
+
+### Unified operations
+
+- **Integrated onboarding:** Use ARM template, SDK, CLI, and the Azure portal to create and manage services.
+- **Unified management:** Manage the service's entire lifecycle through the Azure portal.
+- **Unified access:** Utilize Single Sign-on (SSO) through [Microsoft Entra ID](/entra/fundamentals/whatis). 
+
+### Integrations
+
+- **Logs and metrics:** Seamlessly direct logs and metrics from Azure Monitor to the Azure Native ISV Service using just a few gestures. You can configure autodiscovery of resources to monitor, and set up automatic log forwarding and metrics shipping. You can easily do the setup in Azure, without needing to create more infrastructure or write custom code.
+- **Virtual network injection:** Provides private data plane access to Azure Native ISV services from customers’ virtual networks.
+- **Unified billing:** Engage with a single entity, Microsoft Azure Marketplace, for billing. No separate license purchase is required to use Azure Native ISV Services.

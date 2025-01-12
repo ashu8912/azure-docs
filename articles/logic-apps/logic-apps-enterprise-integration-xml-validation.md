@@ -7,7 +7,7 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: estfan, azla
 ms.topic: how-to
-ms.date: 08/20/2022
+ms.date: 01/04/2024
 ---
 
 # Validate XML in workflows with Azure Logic Apps
@@ -32,13 +32,13 @@ If you're new to logic apps, review [What is Azure Logic Apps](logic-apps-overvi
 
   * Exists in the same location or Azure region as your logic app resource where you plan to use the **XML Validation*** action.
 
-  * If you're using the [**Logic App (Consumption)** resource type](logic-apps-overview.md#resource-type-and-host-environment-differences), your integration account requires the following items:
+  * If you're using the [**Logic App (Consumption)** resource type](logic-apps-overview.md#resource-environment-differences), your integration account requires the following items:
 
     * The [schema](logic-apps-enterprise-integration-schemas.md) to use for validating XML content.
 
     * A [link to your logic app resource](logic-apps-enterprise-integration-create-integration-account.md#link-account).
 
-  * If you're using the [**Logic App (Standard)** resource type](logic-apps-overview.md#resource-type-and-host-environment-differences), you don't store schemas in your integration account. Instead, you can [directly add schemas to your logic app resource](logic-apps-enterprise-integration-schemas.md) using either the Azure portal or Visual Studio Code. You can then use these schemas across multiple workflows within the *same logic app resource*.
+  * If you're using the [**Logic App (Standard)** resource type](logic-apps-overview.md#resource-environment-differences), you don't store schemas in your integration account. Instead, you can [directly add schemas to your logic app resource](logic-apps-enterprise-integration-schemas.md) using either the Azure portal or Visual Studio Code. You can then use these schemas across multiple workflows within the *same logic app resource*.
 
     You still need an integration account to store other artifacts, such as partners, agreements, and certificates, along with using the [AS2](logic-apps-enterprise-integration-as2.md), [X12](logic-apps-enterprise-integration-x12.md), and [EDIFACT](logic-apps-enterprise-integration-edifact.md) operations. However, you don't need to link your logic app resource to your integration account, so the linking capability doesn't exist. Your integration account still has to meet other requirements, such as using the same Azure subscription and existing in the same location as your logic app resource.
 
@@ -56,7 +56,7 @@ If you're new to logic apps, review [What is Azure Logic Apps](logic-apps-overvi
 
 1. Under the step in your workflow where you want to add the **XML Validation** action, choose one of the following steps:
 
-   For a Consumption or ISE plan-based logic app, choose a step:
+   For a Consumption logic app, choose one of the following steps:
 
    * To add the **XML Validation** action at the end of your workflow, select **New step**.
 
@@ -74,7 +74,7 @@ If you're new to logic apps, review [What is Azure Logic Apps](logic-apps-overvi
 
    The dynamic content list shows property tokens that represent the outputs from the previous steps in the workflow. If the list doesn't show an expected property, check the trigger or action heading in the list and whether you can select **See more**.
 
-   For a Consumption or ISE plan-based logic app, the designer looks like this example:
+   For a Consumption logic app, the designer looks like this example:
 
    ![Screenshot showing multi-tenant designer with opened dynamic content list, cursor in "Content" box, and opened dynamic content list.](./media/logic-apps-enterprise-integration-xml-validation/open-dynamic-content-list-multi-tenant.png)
 
